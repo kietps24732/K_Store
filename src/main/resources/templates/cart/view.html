@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+    <body>
+        <main>
+            <div class="panell" th:fragment="shopping_cart">
+            	<table class="table">
+				    <thead class="table-success">
+				      <tr>
+				        <th>Id</th>
+				        <th>Name</th>
+				        <th>Price</th>
+				        <th>Quantity</th>
+				        <th>Amount</th>
+				        <th></th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="item in cart.items">
+				        <td>{{item.id}}</td>
+				        <td>{{item.name}}</td>
+				        <td>{{item.price | number:2}}</td>
+				        <td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width: 50px;"></td>
+				        <td>${{item.qty*item.price | number:2}}</td>
+				        <td>
+				        	<button ng-click="cart.remove(item.id)" type="button" class="btn btn-danger">
+								<a>X</a>
+							</button>
+				        </td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  <div class="panel-ft">
+				  	<button ng-click="cart.clear()" type="button" class="btn btn-outline-danger">
+				  		Clear
+				  	</button>
+				  	<a th:href="@{/order/checkout}" class="btn btn-outline-success">checkout</a>
+				  </div>
+            </div>
+        </main>
+    </body>
+</html>

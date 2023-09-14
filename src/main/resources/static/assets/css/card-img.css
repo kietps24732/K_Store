@@ -1,0 +1,39 @@
+.card-body img{
+	height: 200px;
+	width: 100%;
+}
+/* .card-body img{
+	height: 150px;
+	max-width: 95%;
+} */
+.card-ft a{
+	text-decoration: none;
+}
+.btn.btn-success{
+	position: absolute;
+    top: 86%;
+    right:5%;
+    background-color: #D1E7DD;
+}
+.btn.btn-success.bt{
+	position: absolute;
+    top: 65%;
+    right:2%;
+}
+.pull-left{
+	position: absolute;
+    top: 88%;
+    left:5%;
+}
+.card{
+	border-color: #D1E7DD;	
+	border-width: 2px;
+}
+.card.c{
+	border-color: #D1E7DD;	
+	border-width: 2px;
+	width: 380px
+}
+.card.c{
+	left: 270px;
+}

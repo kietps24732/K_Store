@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+    <body>
+        <!-- <main>
+        CHI TIẾT
+            <h1>[[${item.name}]]</h1>
+            <h1>[[${item.category.name}]]</h1>
+        SẢM PHẨM CÙNG LOẠI
+        	<ul>
+        		<li th:each="p:${item.category.products}">
+        		<a th:href="@{|/product/detail/${p.id}|}">[[${p.name}]]</a>
+        	</ul>
+        </main> -->
+        
+        <main th:object="${item}" class="item-detail">
+        	<div class="row">
+        		<div class="card">
+  					<div class="card-body text-center">
+  						<img th:src="@{|/assets/img/*{image}|}"
+  							style="max-width: 220px; max-height: 200px;">
+  					</div>
+				</div>
+				<div class="card mt-3">
+  					<div class="card-body">
+  						<ul>
+  							<li th:text="*{name}">
+  							<li th:text="*{price}">
+  							<li th:text="*{createDate}">
+  							<li th:text="*{category.name}">
+  						</ul>
+  					</div>
+  					<!-- <button type="button" class="btn btn-success bt">
+						<a>🛒</a>
+					</button> -->
+					<p th:replace="~{/product/_actions::item_id(${item.id})}"/>
+					
+				</div>
+				<div class="card mt-3" style="background-color: #D1E7DD;">
+  					<div class="card-body"><b>SẢN PHẨM CÙNG LOẠI</b></div>
+				</div>
+				<div class="card">
+  					<div class="card-body">
+  						<ul>
+							<li th:each="p:*{category.products}">
+							<a th:href="@{|/product/detail/${p.id}|}" 
+								style="text-decoration: none;">[[${p.name}]]
+							</a>		
+  						</ul>
+  					</div>
+				</div>
+        	</div>
+        </main>
+    </body>
+</html>

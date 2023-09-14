@@ -1,0 +1,10 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="card">
+        <div class="card-body">
+            <i class="icon" style="font-size: 25px;">🛒</i>
+            <a th:href="@{/cart/view}" style="text-decoration: none; color: black;">
+            	<b>{{cart.count}} item x ${{cart.amount | number:2}}</b>
+            </a>
+        </div>
+     </div>
+</div>

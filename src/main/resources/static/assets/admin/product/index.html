@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs" role="tablist" style="font-variant: small-caps;">
+	<li class="nav-item">
+		<a class="nav-link" data-bs-toggle="tab" data-bs-target="#edit" href="">Edition</a>
+	</li>
+	
+	<li class="nav-item">
+		<a class="nav-link active" data-bs-toggle="tab" data-bs-target="#list" href="">List</a>
+	</li>
+</ul>
+
+
+<div class="tab-content">
+	<div id="edit" class="container tab-pane fade">
+		<div ng-include="'/assets/admin/product/_form.html'"></div>
+	</div>
+	<div id="list" class="container tab-pane active">
+		<div ng-include="'/assets/admin/product/_table.html'"></div>
+	</div>
+</div>
